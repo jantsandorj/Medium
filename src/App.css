@@ -1,9 +1,5 @@
 /* Header component style */
-.header {
-  height: 75px;
-  margin: auto;
-  border-bottom: 1px black solid;
-}
+
 .navList {
   font-size: 14px;
   font-weight: 400;
@@ -14,18 +10,30 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 400;
   color: #080808;
-}
+  display: inline;}
+@media screen and (max-width:800px){
+  .bannerTitle{
+    font-size: 5rem;
+  } 
+  .M {
+    display: none;
+  } 
+  }
+
 .bannerDesc {
   font-weight: 400;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: #292929;
+  width: 20%;
 }
 .M img{
  position: absolute;
  right: 150px;
+ 
 }
 .banner{
   height: 470px;
+  margin-top: 75px;
 }
 /* Trending component style */
 .trend{

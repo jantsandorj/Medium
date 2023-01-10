@@ -1,0 +1,57 @@
+.trendCard>div{
+    display: flex; 
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;    
+}
+.Card{
+    width: 30%;
+    height: 130px;
+}
+.newsDesc{
+    display: none;
+}
+.ID{
+    color: #E6E6E6;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}.news{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1.5rem ;
+    padding-top: 1rem;
+    gap: 7px;
+}
+.userName{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #292929;
+}
+.newsTitle{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #292929;
+}
+.newsDate{
+    font-weight: 400;
+    font-size: 12px;
+    color: #757575;
+}
+.trendPic{
+    width: 16px;
+    height: 16px;
+}
+.info{
+    gap: 10px;
+}
+.Card p{
+    margin: 0;
+    padding: 0;
+}
+.Trend .displayPic{
+    display: none;
+}

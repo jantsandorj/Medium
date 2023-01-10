@@ -1,5 +1,6 @@
 import Logo from "../image/svg.png";
 import Button from "./button";
+import React, {useState} from "react"
 
 function Navmenu({ nav }) {
   return (
@@ -10,10 +11,9 @@ function Navmenu({ nav }) {
     </ul>
   );
 }
-
-function Header({ logo, nav }) {
+function Header({ nav, style }) {
   return (
-    <header className="container-fluid bg-warning header m-0">
+    <header className="container-fluid header m-0" style={style}>
       <div className="container-xxl d-flex justify-content-between align-items-center h-100">
         <div className="mx-3">
           <img src={Logo} alt="" />

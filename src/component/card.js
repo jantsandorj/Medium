@@ -17,7 +17,7 @@ export default function Card({ TrendingCards }) {
                 <div className="d-flex info">
                   <p className="newsDate">{e.date}</p>
                   <p className="newsDate">{e.read}</p>
-                  <img className="trendPic" src={e.icon} />
+                  <img className="trendPic" src={e.icon} alt="trend" />
                 </div>
               </div>
               <div className="displayPic">

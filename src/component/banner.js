@@ -1,6 +1,6 @@
 import Button from "./button";
 import M from "../image/M.png";
-export default function Banner() {
+export default function Banner({color1}) {
   return (
     <div className="container-fluid bg-warning border-bottom border-dark banner">
       <div className="container-xxl d-flex">
@@ -10,7 +10,7 @@ export default function Banner() {
             Discover stories, thinking, and expertise from writers on any topic.
           </h3>
           <div className="py-4">
-            <Button text={"Start Reading"} size={"large"} className="fs-5"/>
+            <Button text={"Start Reading"} size={"large"} className="fs-5" color1={color1}/>
           </div>
         </div>
         <div className="M d-none d-md-block">

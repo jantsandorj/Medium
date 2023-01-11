@@ -5,6 +5,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import News from "./component/News";
 import React, {useState} from 'react'
+
 let nav = ["Our Story", "Membership", "Write", "Sign in"];
 const main1Items = [
   {
@@ -76,11 +77,19 @@ const main1Items = [
 ];
 
 function App() {
-  const [color, setColor] = useState("#FFC107")
+  const [color, setColor] = useState("#FFC107");
+  const [color1, setColor1] = useState("black");
+  const [modal, setModal] = useState(false);
   const handleScroll = (event) => {
-    console.log(event.currentTarget);
-    if (event.currentTarget.scrollTop > 75){
+
+    console.log(event);
+    console.log(event.currentTarget.scrollTop);
+    if (event.currentTarget.scrollTop > 475){
       setColor("white")
+      setColor1("green")
+    }else{
+      setColor("#FFC107")
+      setColor1("black")
     }
   }
   const scrolStyle = {
@@ -92,11 +101,12 @@ function App() {
     backgroundColor: color,
   }
   return (
-    <div className="App" onScroll={handleScroll}>
-      <Header nav={nav} style={scrolStyle}/>
-      <Banner />
+    <div style={{width: "100vw", height:"100vh", overflow:"scroll"}} onScroll={handleScroll}>
+      <Header nav={nav} style={scrolStyle} color1={color1}/>
+      <Banner color1={color1}/>
       <Trending trendingAar={main1Items} />
       <News TrendingAar={main1Items}/>
+      
     </div>
   );
 }

@@ -26,10 +26,12 @@
   color: #292929;
   width: 20%;
 }
+.M{
+  position: relative;
+}
 .M img{
  position: absolute;
- right: 150px;
- 
+ right: -250px;
 }
 .banner{
   height: 470px;

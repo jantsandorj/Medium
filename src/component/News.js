@@ -1,6 +1,6 @@
 import Card from "./card";
 import "../style/news.css"
-function Categor({}) {
+function Categor() {
   const categ2 = [
     "Programming",
     "Data Science",

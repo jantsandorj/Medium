@@ -1,6 +1,5 @@
 import Logo from "../image/svg.png";
 import Button from "./button";
-import React, {useState} from "react"
 
 function Navmenu({ nav }) {
   return (
@@ -11,7 +10,7 @@ function Navmenu({ nav }) {
     </ul>
   );
 }
-function Header({ nav, style }) {
+function Header({ nav, style, color1 }) {
   return (
     <header className="container-fluid header m-0" style={style}>
       <div className="container-xxl d-flex justify-content-between align-items-center h-100">
@@ -20,7 +19,7 @@ function Header({ nav, style }) {
         </div>
         <div className="d-flex gap-4 align-items-center">
           <Navmenu nav={nav} />
-          <Button className="navList"  text="Get Started" size={"small"}/>
+          <Button className="navList"  text="Get Started" size={"small"} color1={color1}/>
         </div>
       </div>
     </header>

@@ -1,11 +1,15 @@
+import React from "react";
 import Logo from "../image/svg.png";
 import Button from "./button";
+import Modal from "./modal";
 
 function Navmenu({ nav }) {
   return (
     <ul className="d-flex gap-4 align-items-center m-0">
       {nav.map((a) => (
-        <li className="list-unstyled text-dark navList">{a}</li>
+        <li className="list-unstyled text-dark navList">
+          <span>{a}</span>
+        </li>
       ))}
     </ul>
   );
@@ -19,7 +23,13 @@ function Header({ nav, style, color1 }) {
         </div>
         <div className="d-flex gap-4 align-items-center">
           <Navmenu nav={nav} />
-          <Button className="navList"  text="Get Started" size={"small"} color1={color1}/>
+          <Button
+            className="navList"
+            text="Get Started"
+            size={"small"}
+            color1={color1}
+          />
+          <Modal/>
         </div>
       </div>
     </header>

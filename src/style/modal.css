@@ -1,0 +1,26 @@
+.close{
+    border-style: none;
+    background-color: white;
+    padding-top: 0.8rem;
+    padding-right: 1rem;
+}
+.term{
+    font-size: 0.8rem;
+    color: #757575;
+    padding: 0 3rem;
+    text-align: center;
+}
+.modal{
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+    position: absolute!important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100vh!important;
+    width: 100vw!important;
+    background-color: rgba(255, 255, 255, 0.932);
+}
+.signin{
+    cursor: pointer;
+}

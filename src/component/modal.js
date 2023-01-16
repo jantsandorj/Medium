@@ -1,9 +1,13 @@
 import "../../src/style/modal.css";
 import { TfiEmail } from "react-icons/tfi";
-const Modal = () => {
+const Modal = (show) => {
   console.log("haha");
+  const style = {
+    display: show ? "flex" : "none"
+  }
   return (
-    <div className="modal">
+
+    <div className="modal" style={style}>
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="d-flex justify-content-end">

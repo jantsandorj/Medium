@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../image/svg.png";
 import Button from "./button";
 import Modal from "./modal";
-
+import { useState } from "react";
 function Navmenu({ nav }) {
   return (
     <ul className="d-flex gap-4 align-items-center m-0">
@@ -14,7 +14,9 @@ function Navmenu({ nav }) {
     </ul>
   );
 }
-function Header({ nav, style, color1 }) {
+function Header({ nav, style, color1, show }) {
+  const [showmodal, setShowmodal] = useState(false)
+  
   return (
     <header className="container-fluid header m-0" style={style}>
       <div className="container-xxl d-flex justify-content-between align-items-center h-100">
@@ -28,8 +30,9 @@ function Header({ nav, style, color1 }) {
             text="Get Started"
             size={"small"}
             color1={color1}
+            onClick = {()=>{setShowmodal(true)}}
           />
-          <Modal/>
+          {showmodal && <Modal/>}
         </div>
       </div>
     </header>

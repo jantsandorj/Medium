@@ -80,6 +80,9 @@ function App() {
   const [color, setColor] = useState("#FFC107");
   const [color1, setColor1] = useState("black");
   const [modal, setModal] = useState(false);
+  const handeleShow = () => {
+    setModal = !modal
+  }
   const handleScroll = (event) => {
 
     console.log(event);
@@ -102,7 +105,7 @@ function App() {
   }
   return (
     <div style={{width: "100vw", height:"100vh", overflow:"scroll"}} onScroll={handleScroll}>
-      <Header nav={nav} style={scrolStyle} color1={color1}/>
+      <Header nav={nav} style={scrolStyle} color1={color1} show={handeleShow}/>
       <Banner color1={color1}/>
       <Trending trendingAar={main1Items} />
       <News TrendingAar={main1Items}/>

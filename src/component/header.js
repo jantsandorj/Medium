@@ -3,6 +3,7 @@ import Logo from "../image/svg.png";
 import Button from "./button";
 import Modal from "./modal";
 import { useState } from "react";
+import { Routes } from "react-router-dom";
 function Navmenu({ nav }) {
   return (
     <ul className="d-flex gap-4 align-items-center m-0">
@@ -14,7 +15,8 @@ function Navmenu({ nav }) {
     </ul>
   );
 }
-function Header({ nav, style, color1 }) {
+const nav = ["Our Story", "Membership", "Write", "Sign in"];
+function Header({ style, color1 }) {
   const [showmodal, setShowmodal] = useState(false);
 
   return (
@@ -38,6 +40,9 @@ function Header({ nav, style, color1 }) {
           {showmodal && <Modal ds={showmodal} setShowmodal={setShowmodal}/>}
         </div>
       </div>
+      <Routes>
+
+      </Routes>
     </header>
   );
 }

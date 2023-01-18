@@ -46,7 +46,7 @@ function Footer() {
   export default function News({ TrendingAar }) {
 
     return (
-      <div className="container-sm container-xxl py-5 NEWS justify-content-between px-0 mx-auto row flex-column-reverse flex-md-row">
+      <div className="container-xxl py-5 NEWS justify-content-between px-0 mx-auto row flex-column-reverse flex-md-row">
       <div id="newsSection" className="col-12 col-md-8 col-xl-8 px-0 py-3">
         <Card TrendingCards={TrendingAar}/>
       </div>

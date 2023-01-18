@@ -4,7 +4,7 @@ import Card from "./card";
 export default function Trending({ trendingAar }) {
   return (
     <div className="border-bottom border-secondary container-fluid Trend">
-      <div className=" container-xxl container-sm py-5">
+      <div className=" container-xxl py-5">
         <div className="d-flex gap-3">
           <HiTrendingUp />
           <h5 className="trend">TRENDING ON MEDIUM</h5>

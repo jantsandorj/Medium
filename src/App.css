@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Sans";
+  src: local("./font/Open_Sans"),
+   url("./font/Open_Sans/OpenSans-Italic-VariableFont_wdth\,wght.ttf") format("truetype");
+  font-weight: normal;
+  }
+  
 /* Header component style */
 
 .navList {
@@ -15,9 +22,6 @@
   .bannerTitle{
     font-size: 5rem;
   } 
-  .M {
-    display: none;
-  } 
   }
 
 .bannerDesc {
@@ -28,9 +32,10 @@
 }
 .M img{
  object-fit: cover;
+ width: 100%;
 }
 .banner{
-  height: 470px;
+  height: 500px;
   margin-top: 75px;
 }
 /* Trending component style */

@@ -14,9 +14,9 @@ function Navmenu({ nav }) {
     </ul>
   );
 }
-function Header({ nav, style, color1, show }) {
-  const [showmodal, setShowmodal] = useState(false)
-  
+function Header({ nav, style, color1 }) {
+  const [showmodal, setShowmodal] = useState(false);
+
   return (
     <header className="container-fluid header m-0" style={style}>
       <div className="container-xxl d-flex justify-content-between align-items-center h-100">
@@ -30,9 +30,12 @@ function Header({ nav, style, color1, show }) {
             text="Get Started"
             size={"small"}
             color1={color1}
-            onClick = {()=>{setShowmodal(true)}}
+            onclck={() => {
+              setShowmodal(!showmodal);
+              console.log("lol");
+            }}
           />
-          {showmodal && <Modal/>}
+          {showmodal && <Modal ds={showmodal} setShowmodal={setShowmodal}/>}
         </div>
       </div>
     </header>

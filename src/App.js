@@ -17,7 +17,8 @@ const main1Items = [
     date: "Dec 23, 2022",
     read: "3 min read",
     icon: "",
-    img1: require("./image/1.jpeg")
+    img1: require("./image/1.jpeg"),
+    cat: "programming"
   },
   {
     id: "02",
@@ -28,7 +29,8 @@ const main1Items = [
     date: "Dec 28, 2022",
     read: "7 min read",
     icon: require("./image/star.png"),
-    img1: require("./image/2.jfif")
+    img1: require("./image/2.jfif"),
+    cat: "data science"
   },
   {
     id: "03",
@@ -39,7 +41,8 @@ const main1Items = [
     date: "Dec 28, 2022",
     read: "10 min read",
     icon: require("./image/star.png"),
-    img1: require("./image/3.jpeg")
+    img1: require("./image/3.jpeg"),
+    cat: "technology"
   },
   {
     id: "04",
@@ -50,7 +53,8 @@ const main1Items = [
     date: "Jan 1, 2022",
     read: "7 min read",
     icon: require("./image/star.png"),
-    img1: require("./image/4.jfif")
+    img1: require("./image/4.jfif"),
+    cat: "writing"
   },
   {
     id: "05",
@@ -61,7 +65,8 @@ const main1Items = [
     date: "Dec 30, 2022",
     read: "9 min read",
     icon: "",
-    img1: require("./image/5.png")
+    img1: require("./image/5.png"),
+    cat: "politics"
   },
   {
     id: "06",
@@ -72,7 +77,8 @@ const main1Items = [
     date: "Dec 31, 2022",
     read: "3 min read",
     icon: "",
-    img1: require("./image/6.jpeg")
+    img1: require("./image/6.jpeg"),
+    cat: "machine learning"
   },
 ];
 
@@ -80,7 +86,7 @@ function App() {
   const [color, setColor] = useState("#FFC107");
   const [color1, setColor1] = useState("black");
   const [modal, setModal] = useState(false);
-  const handeleShow = () => {
+  const handleShow = () => {
     setModal = !modal
   }
   const handleScroll = (event) => {
@@ -105,11 +111,10 @@ function App() {
   }
   return (
     <div style={{width: "100vw", height:"100vh", overflow:"scroll"}} onScroll={handleScroll}>
-      <Header nav={nav} style={scrolStyle} color1={color1} show={handeleShow}/>
+      <Header nav={nav} style={scrolStyle} color1={color1} show={handleShow}/>
       <Banner color1={color1}/>
       <Trending trendingAar={main1Items} />
       <News TrendingAar={main1Items}/>
-      
     </div>
   );
 }

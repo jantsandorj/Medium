@@ -1,17 +1,20 @@
 import "../../src/style/modal.css";
 import { TfiEmail } from "react-icons/tfi";
-const Modal = (show) => {
-  console.log("haha");
+import { useState } from "react";
+
+const Modal = ({ds, setShowmodal}) => {
+
   const style = {
-    display: show ? "flex" : "none"
+    display: ds ? "block" : "none",
   }
+
   return (
 
-    <div className="modal" style={style}>
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
+    <div className="modal" style={{display: ds ? "block" : "none"}} onClick={()=>setShowmodal(false)}>
+      <div class="modal-dialog" role="document" onClick={(e)=>{e.stopPropagation()}}>
+        <div class="modal-content" >
           <div class="d-flex justify-content-end">
-            <button className="close">
+            <button className="close" onClick={()=>setShowmodal(false)} >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>

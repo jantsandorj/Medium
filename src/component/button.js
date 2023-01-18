@@ -1,5 +1,5 @@
 
-export default function Button({ text, size, className, color1 }) {
+export default function Button({ text, size, className, color1, onclck }) {
   const style = {
     backgroundColor: color1,
     borderRadius: "50px",
@@ -17,6 +17,7 @@ export default function Button({ text, size, className, color1 }) {
         size={size}
         className={className}
         color1={color1}
+        onClick={onclck}
       >
         {text}
       </button>

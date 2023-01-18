@@ -26,12 +26,8 @@
   color: #292929;
   width: 20%;
 }
-.M{
-  position: relative;
-}
 .M img{
- position: absolute;
- right: -250px;
+ object-fit: cover;
 }
 .banner{
   height: 470px;

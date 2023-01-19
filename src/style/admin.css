@@ -1,0 +1,28 @@
+.font1{
+    font-size: 1rem;
+    font-family: Sans;
+    font-weight: 500;
+}
+.mData{
+    height: 90px;
+    
+}
+.mData:nth-child(1)>div{
+    border-bottom: 4px green solid;
+}
+.mData:nth-child(2)>div{
+    border-bottom: 4px blue solid;
+}
+.mData:nth-child(3)>div{
+    border-bottom: 4px red solid;
+}
+.mData:nth-child(4)>div{
+    border-bottom: 4px yellow solid;
+}
+.Barrow{
+    height: 300px;
+}
+.srchInput{
+    width: 700px;
+    
+}

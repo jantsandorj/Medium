@@ -10,6 +10,8 @@ import { Admin } from "./pages/admin";
 import { Dashboard } from "./pages/dashboard";
 import { User } from "./pages/adminUser";
 import { NewsAdmin } from "./pages/adminnews";
+import { UserInterface } from "./pages/user";
+import 'bootstrap-icons/font/bootstrap-icons.css';
 const Main1Items = [
   {
     id: "01",
@@ -134,11 +136,15 @@ function App() {
           }
         />
         <Route path="/admin" element={<Admin />}>
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="news" element={<NewsAdmin />} />
-          <Route path="user" element={<User />} />
+          <Route path="dashboard" element={<Dashboard/>}/>
+          <Route path="news" element={<NewsAdmin/>}/>
+          <Route path="user" element={<User/>}/>
         </Route>
-        {/* <Route path="/user" element={}/> */}
+        <Route path="/user" element={<UserInterface />}>
+          {/* <Route path="dashboard" element={<Dashboard/>}/>
+          <Route path="news" element={<NewsAdmin/>}/>
+          <Route path="user" element={<User/>}/> */}
+        </Route>
       </Routes>
     </div>
   );

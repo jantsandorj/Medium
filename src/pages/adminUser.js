@@ -1,5 +1,5 @@
 export const User = () => {
     return(
-        <div>User</div>
+        <div className="col-9">User</div>
     )
 };

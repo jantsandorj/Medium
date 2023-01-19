@@ -3,35 +3,27 @@ import { TfiEmail } from "react-icons/tfi";
 import { BiUserCircle } from "react-icons/bi";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Modal = ({ ds, setShowmodal }) => {
   const navigate = useNavigate();
+  const [user, setUser] = useState("");
+  const [pass, setPass] = useState("");
   const userdata = {
     user: "jack_sparrow@gmail.com",
     pass: "Jack1234",
+    adminUser: "lol",
+    adminPass: "123",
   };
-
-  const CheckUser = () => {
-    if (user === userdata.user && pass === userdata.pass) {
+  const CheckAdmin = () => {
+    if (user === userdata.adminUser && pass === userdata.adminPass) {
       navigate("/admin");
-      toast.success("Success", {
-        position: "top-center",
-        autoClose: 10000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
     } else {
-      console.log("haha");
       toast.error("Invalid username or password !", {
         position: "top-center",
-        autoClose: 10000,
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -41,26 +33,29 @@ const Modal = ({ ds, setShowmodal }) => {
       });
     }
   };
-  const [user, setUser] = useState("");
-  const [pass, setPass] = useState("");
+  const CheckUser = () => {
+    if (user === userdata.user && pass === userdata.pass) {
+      navigate("/user");
+    } else {
+      toast.error("Invalid username or password !", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
+  };
   return (
     <div
       className="modal"
       style={{ display: ds ? "block" : "none" }}
       onClick={() => setShowmodal(false)}
     >
-      <ToastContainer
-        position="top-center"
-        autoClose={10000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
+      <ToastContainer />
       <div
         class="modal-dialog"
         role="document"
@@ -89,7 +84,6 @@ const Modal = ({ ds, setShowmodal }) => {
                     placeholder=" Type your username"
                     value={user}
                     onChange={(e) => {
-                      console.log(e.target.value);
                       setUser(e.target.value);
                     }}
                   />
@@ -108,7 +102,6 @@ const Modal = ({ ds, setShowmodal }) => {
                     value={pass}
                     onChange={(e) => {
                       setPass(e.target.value);
-                      console.log(e.target.value);
                     }}
                   />
                 </div>
@@ -120,7 +113,7 @@ const Modal = ({ ds, setShowmodal }) => {
                 Forgot password?
               </a>
               <button className="btn bg-warning text-light" onClick={CheckUser}>
-                Login
+                User Login
               </button>
             </div>
             <button className="border rounded-5 py-1 px-4 my-3 bg-light">
@@ -152,6 +145,7 @@ const Modal = ({ ds, setShowmodal }) => {
               <span className="text-decoration-underline">Privacy Policy</span>{" "}
               applies to you.
             </p>
+            <button className="btn btn-danger mb-5" onClick={CheckAdmin}>Admin Login</button>
           </div>
         </div>
       </div>

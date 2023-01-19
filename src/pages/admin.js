@@ -1,141 +1,58 @@
-import { useEffect, useState } from "react";
-import { Link, Outlet, Route, Routes } from "react-router-dom";
-import { Barchart } from "../component/barchart";
+import "../style/admin.css";
+import { Link, Outlet } from "react-router-dom";
 
 export const Admin = () => {
-  const [data, setData] = useState([]);
-  const [load, setLoad] = useState(false);
-  const [err, setErr] = useState("");
-  useEffect(() => {
-    fetch("http://192.168.1.50:4040/news")
-      .then((res) => res.json())
-      .then((dt) => {
-        console.log(dt.news);
-        setData(dt.news);
-      })
-      .catch((err) => console.log(err));
-  });
-
   return (
     <div>
-      <header className="bg-warning">
-        <nav className="navbar navbar-expand-lg">
-          <ul className="navbar-nav d-flex justify-content-between w-100">
-            <li className="nav-item">
-              <Link className="nav-link" to="/admin">
-                Company name
-              </Link>
-            </li>
-            <li>
-              <input type="text" className="form-control bg-light" />
-            </li>
-            <li>
-              <Link className="nav-link" to="/">
-                Logout
-              </Link>
-            </li>
-          </ul>
+      <header className="bg-warning row">
+        <nav className="navbar navbar-expand-md col-12">
+          <div className="row w-100">
+            <ul className="navbar-nav d-flex justify-content-between col-12">
+              <li className="nav-item ps-5">
+                <Link className="nav-link" to="/admin">
+                  Company name
+                </Link>
+              </li>
+              <li className="nav-item">
+                <input type="text" className="form-control bg-light srchInput" placeholder="Search ..." />
+              </li>
+              <li className="nav-item pe-5">
+                <Link className="nav-link" to="/">
+                  Logout
+                </Link>
+              </li>
+            </ul>
+          </div>
         </nav>
       </header>
       <div className="container-fluid">
         <main className="row">
-          <section className="col-3">
+          <section className="col-2 border ">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link" to="/dashboard">
+                <Link
+                  className="nav-link font1 d-flex gap-2"
+                  to="/admin/dashboard"
+                >
+                  <i class="bi bi-rocket"></i>
                   Dashboard
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/news">
+                <Link className="nav-link font1 d-flex gap-2" to="/admin/news">
+                  <i class="bi bi-newspaper"></i>
                   News
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/user">
+                <Link className="nav-link font1 d-flex gap-2" to="/admin/user">
+                  <i class="bi bi-person-rolodex"></i>
                   Users
                 </Link>
               </li>
             </ul>
           </section>
-          <section className="col-9">
-            <div className="row">
-              <div className="col-md-4">
-                <div className="card">
-                  <div className="card-title">Users</div>
-                  <div className="flex justify-content-between align-items-center">
-                    <i
-                      className="bi bi-people"
-                      style={{ fontSize: "40px" }}
-                    ></i>
-                    <h3>4500</h3>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="card">
-                  <div className="card-title">News</div>
-                  <div className="flex justify-content-between align-items-center">
-                    <i
-                      className="bi bi-newspaper"
-                      style={{ fontSize: "40px" }}
-                    ></i>
-                    <h3>9000</h3>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="card">
-                  <div className="card-title">Category</div>
-                  <div className="flex justify-content-between align-items-center">
-                    <i
-                      className="bi bi-people"
-                      style={{ fontSize: "40px" }}
-                    ></i>
-                    <h3>280</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <Barchart />
-            <div className="row">
-              <div className="table-responsive">
-                <table className="table table-strip">
-                  <thead>
-                    <th>No</th>
-                    <th>Title</th>
-                    <th>Category</th>
-                    <th>Category</th>
-                    <th>isTrending</th>
-                  </thead>
-                  <tbody>
-                    {data.map(
-                      ({ _id, title, body, isTrending, category }, index) => {
-                        return (
-                          <tr key={index}>
-                            <td>{index + 1}</td>
-                            <td>{title}</td>
-                            <td>{category}</td>
-                            <td>
-                              {isTrending ? (
-                                <button className="btn btn-success disabled">
-                                  Yes
-                                </button>
-                              ) : (
-                                <button className="btn btn-danger disabled">
-                                  No
-                                </button>
-                              )}
-                            </td>
-                          </tr>
-                        );
-                      }
-                    )}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </section>
+          <Outlet />
         </main>
       </div>
     </div>

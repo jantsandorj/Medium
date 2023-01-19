@@ -1,5 +1,5 @@
 export const NewsAdmin = () => {
     return(
-        <div>News</div>
+        <div className="col-9">News</div>
     )
 };

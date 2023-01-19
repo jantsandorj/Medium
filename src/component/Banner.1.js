@@ -1,7 +1,8 @@
 import Button from "./button";
 import M from "../image/M.png";
+
 export default function Banner({ color1 }) {
-  return (  
+  return (
     <div className="container-fluid bg-warning border-bottom border-dark banner">
       <div className="container-xxl">
         <div className="row">
@@ -16,8 +17,7 @@ export default function Banner({ color1 }) {
                 text={"Start Reading"}
                 size={"large"}
                 className="fs-5"
-                color1={color1}
-              />
+                color1={color1} />
             </div>
           </div>
           <div className="M d-none d-xxl-block col-xxl-6">

@@ -8,18 +8,18 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Modal = ({ ds, setShowmodal }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const userdata = {
     user: "jack_sparrow@gmail.com",
     pass: "Jack1234",
   };
-  
+
   const CheckUser = () => {
-    
     if (user === userdata.user && pass === userdata.pass) {
-      toast("Success", {
+      navigate("/admin");
+      toast.success("Success", {
         position: "top-center",
-        autoClose: 1000,
+        autoClose: 10000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -27,12 +27,11 @@ const Modal = ({ ds, setShowmodal }) => {
         progress: undefined,
         theme: "colored",
       });
-
     } else {
       console.log("haha");
-      toast.error("Invalid username or password !",{
+      toast.error("Invalid username or password !", {
         position: "top-center",
-        autoClose: 1000,
+        autoClose: 10000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -40,8 +39,6 @@ const Modal = ({ ds, setShowmodal }) => {
         progress: undefined,
         theme: "colored",
       });
-        navigate("/admin")
-      
     }
   };
   const [user, setUser] = useState("");
@@ -54,7 +51,7 @@ const Modal = ({ ds, setShowmodal }) => {
     >
       <ToastContainer
         position="top-center"
-        autoClose={1000}
+        autoClose={10000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -91,7 +88,10 @@ const Modal = ({ ds, setShowmodal }) => {
                     className="border-0 logInput"
                     placeholder=" Type your username"
                     value={user}
-                    onChange={(e) => setUser(e.target.value)}
+                    onChange={(e) => {
+                      console.log(e.target.value);
+                      setUser(e.target.value);
+                    }}
                   />
                 </div>
               </div>
@@ -108,7 +108,7 @@ const Modal = ({ ds, setShowmodal }) => {
                     value={pass}
                     onChange={(e) => {
                       setPass(e.target.value);
-                      console.log(pass);
+                      console.log(e.target.value);
                     }}
                   />
                 </div>

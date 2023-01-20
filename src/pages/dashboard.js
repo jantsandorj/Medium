@@ -76,7 +76,7 @@ export const Dashboard = () => {
           <ChartPie />
         </div>
       </div>
-      <div className="row">
+      <div className="row py-3">
         <div className="table-responsive">
           <table className="table table-strip">
             <thead>

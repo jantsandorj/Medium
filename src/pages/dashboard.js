@@ -9,8 +9,8 @@ export const Dashboard = () => {
     fetch("https://medium-api-psi.vercel.app/api/news")
       .then((res) => res.json())
       .then((dt) => {
-        console.log(dt.news);
-        setData(dt.news);
+        console.log(dt.result);
+        setData(dt.result);
       })
       .catch((err) => console.log(err));
   });

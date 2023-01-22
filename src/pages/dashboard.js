@@ -10,6 +10,7 @@ export const Dashboard = () => {
       .then((res) => res.json())
       .then((dt) => {
         console.log(dt);
+        console.log(dt.result);
         setData(dt.result);
       })
       .catch((err) => console.log(err));
@@ -76,7 +77,7 @@ export const Dashboard = () => {
           <ChartPie />
         </div>
       </div>
-      <div className="row bg-light mt-5">
+      <div className="row py-3">
         <div className="table-responsive">
           <table className="table table-strip">
             <thead className="border-bottom border-3">

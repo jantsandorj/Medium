@@ -25,10 +25,10 @@ export default function News() {
   })
   
   const FilterCat = (event) => {
-    if (event.target.innerHTML != 0) {
+    if (event.target.innerHTML != "All") {
      const filter = data.filter((val) => val.category == event.target.innerHTML) 
       setFiltered(filter)
-    } else {
+    } else if (event.target.innerHTML = "All"){
       setFiltered(data)
     } 
   }

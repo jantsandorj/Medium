@@ -129,7 +129,7 @@ function App() {
               <Header style={scrolStyle} color1={color1} show={handleShow} />
               <Banner color1={color1} />
               <Trending trendingAar={Main1Items} />
-              <News />
+              <News/>
             </div>
           }
         />

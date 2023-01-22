@@ -1,14 +1,4 @@
-import { useEffect, useState } from "react";
 export default function Card({ TrendingCards }) {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch("https://medium-api-psi.vercel.app/api/news")
-      .then((res) => res.json())
-      .then((dt) => {
-        console.log(dt.result);
-        setData(dt.result);
-      })
-      .catch((err) => console.log(err))})
   return (
       <div className="newsCard row col-12">
         {TrendingCards.map((e,i) => {

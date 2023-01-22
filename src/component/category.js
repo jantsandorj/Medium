@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-export default function Categor({ data, FilterCat }) {
+export default function Categor({ data,FilterCat }) {
   //   const [data, setData] = useState([]);
   //   useEffect(() => {
   //     fetch("https://medium-api-psi.vercel.app/api/news")
@@ -24,9 +24,12 @@ export default function Categor({ data, FilterCat }) {
       className="d-flex gap-3
         flex-wrap py-4"
     >
+      <button className="border p-2 catDiv" onClick={FilterCat}>
+          All
+          </button>
       {categ4.map((l) => {
         return (
-          <button className="border p-2 catDiv" onClick={FilterCat}>
+          <button className="border p-2 catDiv" onClick={(e) => FilterCat}>
             {l}
           </button>
         );

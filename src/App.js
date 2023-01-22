@@ -99,8 +99,6 @@ function App() {
     setModal = !modal;
   };
   const handleScroll = (event) => {
-    console.log(event);
-    console.log(event.currentTarget.scrollTop);
     if (event.currentTarget.scrollTop > 475) {
       setColor("white");
       setColor1("green");
@@ -131,7 +129,7 @@ function App() {
               <Header style={scrolStyle} color1={color1} show={handleShow} />
               <Banner color1={color1} />
               <Trending trendingAar={Main1Items} />
-              <News TrendingAar={Main1Items} />
+              <News />
             </div>
           }
         />

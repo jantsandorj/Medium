@@ -6,11 +6,11 @@ import { ChartPie, Pie } from "../component/donut";
 export const Dashboard = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("http://192.168.1.50:4040/news")
+    fetch("https://medium-api-psi.vercel.app/api/news")
       .then((res) => res.json())
       .then((dt) => {
-        console.log(dt.news);
-        setData(dt.news);
+        console.log(dt);
+        setData(dt.result);
       })
       .catch((err) => console.log(err));
   });
@@ -76,13 +76,12 @@ export const Dashboard = () => {
           <ChartPie />
         </div>
       </div>
-      <div className="row">
+      <div className="row bg-light mt-5">
         <div className="table-responsive">
           <table className="table table-strip">
-            <thead>
+            <thead className="border-bottom border-3">
               <th>No</th>
               <th>Title</th>
-              <th>Category</th>
               <th>Category</th>
               <th>isTrending</th>
             </thead>

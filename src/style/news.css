@@ -1,5 +1,6 @@
 .NEWS #newsSection .newsCard .Card .ID{
     display: none !important;
+    box-sizing: border-box;
 }
 #newsSection .newsCard{
     display: flex;
@@ -17,21 +18,23 @@
     font-weight: 500;
 }
 #newsSection .newsCard > div .newsTitle{
-    size: 21px;
+    font-size: 1rem;
     width: 80%;
     font-weight: 700;
     color: #292929;
-    display: block;
     overflow:hidden;
+    text-overflow: ellipsis;
 }
 #newsSection .newsCard > div .newsDesc{
     display: block;
     width: 80%;
-    height: 45px;
-    size: 1rem;
+    font-size: 0.8rem;
     font-weight: 400;
     color: #757575;
     overflow:hidden;
+    text-overflow: ellipsis;
+    height: 42px;
+    
 }
 #newsSection .newsCard > div .newsDate{
     size: 12px;
@@ -66,7 +69,16 @@
     width: 100%;
 }
 .displayPic{
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.displayPic>img{
+    height: 100%;
+}
+#newsSection .news{
+    width: 70%;
+    height: 160px;
+}
+

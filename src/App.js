@@ -9,9 +9,10 @@ import { Route, Routes } from "react-router-dom";
 import { Admin } from "./pages/admin";
 import { Dashboard } from "./pages/dashboard";
 import { User } from "./pages/adminUser";
-import { NewsAdmin } from "./pages/adminnews";
+
 import { UserInterface } from "./pages/user";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import NewsAdmin from "./pages/adminnews";
 const Main1Items = [
   {
     id: "01",
@@ -119,9 +120,7 @@ function App() {
     <div>
       <Routes>
         <Route
-          exact
-          path="/"
-          element={
+          exact path="/" element={
             <div
               style={{ width: "100vw", height: "100vh", overflow: "scroll" }}
               onScroll={handleScroll}

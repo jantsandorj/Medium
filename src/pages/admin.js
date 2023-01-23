@@ -26,7 +26,7 @@ export const Admin = () => {
         </nav>
       </header>
       <div className="container-fluid">
-        <main className="row">
+        <main className="row flex-row">
           <section className="col-2 border ">
             <ul className="navbar-nav">
               <li className="nav-item">

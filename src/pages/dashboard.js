@@ -14,7 +14,7 @@ export const Dashboard = () => {
         setData(dt.result);
       })
       .catch((err) => console.log(err));
-  });
+  }, []);
   return (
     <section className="col-10 bg-light">
       <div className="row my-3">
